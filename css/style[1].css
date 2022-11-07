@@ -1,28 +1,182 @@
-<html>
+*,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
 
-<title>Style1</title>
+:root {
+    --header-background: #36c;
+    --foreground: #fff;
+    --header-fonts: Roboto Slab, Book Antiqua, Georgia,Times New Roman, Serif;
+    --paragraph-spacing: 0.75em;
+}
 
-<style type="text/css">
+body {
+    background:#e9f8ff; 
+    /*font-family:Maiandra GD, Verdana, Helvetica, Arial, Sans; */
+    font-family: 'Open Sans', sans-serif;
+    font-style:normal; 
+    font-size:11pt; 
+    font-weight:normal; 
+    color:#000066; 
+    margin-left:40px; 
+    margin-right:40px; 
+    text-align:left; 
+    line-height: 1.2em;
+}
 
-<!--h1 {background:#3366CC; font-family:Book Antiqua, Georgia,Times New Roman, Serif; font-style:italic; 
-color:white; text-align:left; margin-left:0.0in; margin-right:1.0in}-->
+@media screen and (min-width: 780px) {
+    body {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
 
-<!--h2 {background:#3366CC; font-family:Book Antiqua, Georgia,Times New Roman, Serif; font-style:italic; 
-color:white; text-align:left; margin-left:0.0in; margin-right:2.0in}-->
+p { 
+    margin-bottom: var(--paragraph-spacing);
+}
 
-<!--h3 {background:#3366CC; font-family:Book Antiqua, Georgia,Times New Roman, Serif; font-style:italic; 
-color:white; text-align:left; margin-left:0.0in; margin-right:3.00in}-->
+a:link, a:visited {
+    color:#600;
+}
 
-<!--h4 {background:#3366CC; font-family:Book Antiqua, Georgia,Times New Roman, Serif; font-style:italic; 
-color:white; text-align:left; margin-left:0.0in; margin-right:3.00in}-->
+a[href^='http']::after {
+    content: ' [↗]';
+    
+}
 
-<!--h5 {background:#3366CC; font-family:Book Antiqua, Georgia,Times New Roman, Serif; font-style:italic; 
-color:white; text-align:left; margin-left:0.0in; margin-right:3.00in}-->
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+    font-family: var(--header-fonts); 
+    font-style:italic; 
+    font-weight: bold;
+    margin-inline: 0;
+    display: block;
+    line-height: normal;
+}
 
-<!--body {background:#68CCFF; font-family:Maiandra GD, Verdana, Helvetica, Arial, Sans; font-style:normal; 
-font-size:11pt; font-weight:normal; color:#000066; 
-margin-left:0.25in; margin-right:0.25in; text-align:left; text-indent:0.2in}-->
+h1, .h1 {
+    font-size: 2em;
+    margin-block: 0.67em; 
+}
 
-</style>
+h2, .h2 {
+    font-size: 1.5em;
+    margin-block: 0.83em;
+    
+}
 
-</html>
+h3, .h3 {
+    font-size: 1.17em;
+    margin-block: 1em;    
+}
+
+h4, .h4, h5, .h5 {
+    font-size: 1em;
+    margin-block: 1.33em;
+}
+
+
+header h1, header .h1, header h2, header .h2, header h3, header .h3, header h4, header .h4, header h5, header .h5 {
+    background: var(--header-background); 
+    color: var(--foreground); 
+    text-align:left;
+    margin-left:0.0in;
+}
+
+header h1, header .h1 {   margin-right:1.0in}
+
+header h2, header .h2 { margin-left:0.0in; margin-right:2.0in}
+
+header h3, header .h3 { margin-left:0.0in; margin-right:3.00in}
+
+header h4, header .h4 { margin-left:0.0in; margin-right:3.00in}
+
+header h5, header .h5 { margin-right:3.00in }
+
+
+hr {
+    height: 1px;
+    background-color: #36c;
+    border: 0;
+    display: block;
+}
+
+.justify {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.citw {
+
+    font-style: italic;
+}
+
+.citw::before {
+    content: '“'
+}
+
+.citw::after {
+    content: '”'
+}
+
+
+.backlink {
+    text-align: center;
+    font-size: smaller;
+    opacity: 0.8;
+}
+
+.aside {
+    font-size: smaller;
+    opacity: 0.8;
+}
+
+.quote {
+    border-left: 5px solid var(--header-background);
+    text-align: left;
+    display: block;
+    padding: 5px 1em;
+    margin: 0 auto var(--paragraph-spacing);  
+}
+
+.quote blockquote {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.quote blockquote p {
+    margin: 0;
+}
+
+.quote figcaption {
+    margin-top: 0.5em;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.quote figcaption::before {
+    content: '— '
+}
+
+
+
+.site-map {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.site-map > * {
+    flex-basis: 50%;
+    margin-bottom: 1em;
+}
+
+.site-map > li::marker {
+    font-weight: bold;
+}
+
+.site-map > li > ul,
+.site-map > li > ol {
+    padding-left: 1em;
+    list-style-type: disc;
+}
